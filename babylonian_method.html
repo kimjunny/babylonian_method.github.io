@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Babylonian Method</title>
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+	<h1>Babylonian Method</h1>
+	<p>Enter the value and the degree of the root you want to calculate:</p>
+	<form>
+		<label for="number">Value:</label>
+		<input type="number" id="number" name="number"><br><br>
+		<label for="degree">Degree:</label>
+		<input type="number" id="degree" name="degree"><br><br>
+		<input type="button" value="Calculate" onclick="babylonian()">
+	</form>
+	<p id="result"></p>
+	<div id="graph"></div>
+	
+	<script>
+		function babylonian() {
+			var x = document.getElementById("number").value;
+			var n = document.getElementById("degree").value;
+			var guess = x / n;
+			var prevGuess;
+			var iterations = [];
+			var guesses = [];
+			
+			do {
+				prevGuess = guess;
+				guess = (1 / n) * ((n - 1) * guess + x / Math.pow(guess, n - 1));
+				iterations.push(iterations.length + 1);
+				guesses.push(guess);
+			} while(Math.abs(guess - prevGuess) > 0.00001);
+			
+			var result = "The approximate value of the "+ n + "th root of " + x + " is " + guess.toFixed(5);
+			document.getElementById("result").innerHTML = result;
+			
+			var trace1 = {
+			  x: iterations,
+			  y: guesses,
+			  mode: 'lines+markers',
+			  type: 'scatter',
+			  name: 'Approximations'
+			};
+
+			var trace2 = {
+			  x: [0, iterations.length],
+			  y: [guess, guess],
+			  mode: 'lines',
+			  type: 'scatter',
+			  name: 'Final Approximation'
+			};
+
+			var data = [trace1, trace2];
+
+			var layout = {
+			  title:'Approximation Process',
+			  xaxis: {
+			    title: 'Iteration'
+			  },
+			  yaxis: {
+			    title: 'Approximation'
+			  }
+			};
+
+			Plotly.newPlot('graph', data, layout);
+		}
+	</script>
+</body>
+</html>
