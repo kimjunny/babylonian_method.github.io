@@ -33,7 +33,7 @@
 				guesses.push(guess);
 			} while(Math.abs(guess - prevGuess) > 0.00001);
 			
-			var result = "근사값은 "+ n + "root " + x + "" + guess.toFixed(5);
+			var result = "근사값은 "+ n + "root " + x + " = " + guess.toFixed(5);
 			document.getElementById("result").innerHTML = result;
 			
 			var trace1 = {
