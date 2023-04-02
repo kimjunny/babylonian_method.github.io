@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<canvas id="universe-size-chart"></canvas>
 	<title>빅뱅 이후 중요 사건 연대표</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+	<script>
+  // Get the canvas element
+  var ctx = document.getElementById("universe-size-chart").getContext("2d");
+
+  // Define the data for the chart
+  var data = {
+    labels: ["138 billion years ago", "120 billion years ago", "46 billion years ago", "present"],
+    datasets: [{
+      label: "Size of the Universe",
+      data: [0, 0.1, 100, 93],
+      backgroundColor: "rgba(54, 162, 235, 0.2)",
+      borderColor: "rgba(54, 162, 235, 1)",
+      borderWidth: 1
+    }]
+  };
+
+  // Define the options for the chart
+  var options = {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  };
+
+  // Create the chart
+  var chart = new Chart(ctx, {
+    type: "line",
+    data: data,
+    options: options
+  });
+</script>
+
 	<table>
 		<thead>
 			<tr>
