@@ -1,72 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Chronological Table of Events After the Big Bang</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<title>Babylonian Method</title>
-	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-	<h1>Babylonian Method</h1>
-	<p> n 루트 s 에 대응하는 값을 적으세요:</p>
-	<form>
-		<label for="degree">n:</label>
-		<input type="number" id="degree" name="degree"><br><br>
-		<label for="number">s:</label>
-		<input type="number" id="number" name="number"><br><br>
-		<input type="button" value="Calculate" onclick="babylonian()">
-	</form>
-	<p id="result"></p>
-	<div id="graph"></div>
-	
-	<script>
-		function babylonian() {
-			var x = document.getElementById("number").value;
-			var n = document.getElementById("degree").value;
-			var guess = x / n;
-			var prevGuess;
-			var iterations = [];
-			var guesses = [];
-			
-			do {
-				prevGuess = guess;
-				guess = (1 / n) * ((n - 1) * guess + x / Math.pow(guess, n - 1));
-				iterations.push(iterations.length + 1);
-				guesses.push(guess);
-			} while(Math.abs(guess - prevGuess) > 0.00001);
-			
-			var result = n + "루트" + x + "의 근사값" + " = " + guess.toFixed(5);
-			document.getElementById("result").innerHTML = result;
-			
-			var trace1 = {
-			  x: iterations,
-			  y: guesses,
-			  mode: 'lines+markers',
-			  type: 'scatter',
-			  name: 'Approximations'
-			};
-
-			var trace2 = {
-			  x: [0, iterations.length],
-			  y: [guess, guess],
-			  mode: 'lines',
-			  type: 'scatter',
-			  name: 'Final Approximation'
-			};
-
-			var data = [trace1, trace2];
-
-			var layout = {
-			  title:'Approximation Process',
-			  xaxis: {
-			    title: 'Iteration'
-			  },
-			  yaxis: {
-			    title: 'Approximation'
-			  }
-			};
-
-			Plotly.newPlot('graph', data, layout);
-		}
-	</script>
+	<table>
+		<thead>
+			<tr>
+				<th>Event</th>
+				<th>Date</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Big Bang</td>
+				<td>13.8 billion years ago</td>
+				<td>The universe begins to expand and cool rapidly.</td>
+			</tr>
+			<tr>
+				<td>Formation of the first stars and galaxies</td>
+				<td>400-500 million years after the Big Bang</td>
+				<td>The first stars and galaxies form from the cooling gas in the universe.</td>
+			</tr>
+			<tr>
+				<td>Formation of the Milky Way galaxy</td>
+				<td>12-13 billion years ago</td>
+				<td>The Milky Way galaxy begins to form from gas and dust in the universe.</td>
+			</tr>
+			<tr>
+				<td>Formation of the Solar System</td>
+				<td>4.6 billion years ago</td>
+				<td>The Solar System forms from a cloud of gas and dust.</td>
+			</tr>
+			<tr>
+				<td>Development of life on Earth</td>
+				<td>3.5 billion years ago</td>
+				<td>The first life forms on Earth, most likely single-celled organisms.</td>
+			</tr>
+			<tr>
+				<td>Evolution of Homo sapiens</td>
+				<td>300,000 years ago</td>
+				<td>Homo sapiens, the modern human, evolves in Africa.</td>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>
