@@ -1,87 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	<canvas id="universe-size-chart"></canvas>
-	<title>빅뱅 이후 중요 사건 연대표</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+  <title>Timeline of Significant Events Since the Big Bang</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<script>
-  // Get the canvas element
-  var ctx = document.getElementById("universe-size-chart").getContext("2d");
-
-  // Define the data for the chart
-  var data = {
-    labels: ["138 billion years ago", "120 billion years ago", "46 billion years ago", "present"],
-    datasets: [{
-      label: "Size of the Universe",
-      data: [0, 0.1, 100, 93],
-      backgroundColor: "rgba(54, 162, 235, 0.2)",
-      borderColor: "rgba(54, 162, 235, 1)",
-      borderWidth: 1
-    }]
-  };
-
-  // Define the options for the chart
-  var options = {
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: true
-        }
-      }]
-    }
-  };
-
-  // Create the chart
-  var chart = new Chart(ctx, {
-    type: "line",
-    data: data,
-    options: options
-  });
-</script>
-
-	<table>
-		<thead>
-			<tr>
-				<th>사건</th>
-				<th>날짜</th>
-				<th>설명</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>빅뱅</td>
-				<td>138억 년 전</td>
-				<td>우주가 급격히 팽창하고 냉각하기 시작합니다.</td>
-			</tr>
-			<tr>
-				<td>첫 번째 별과 은하의 형성</td>
-				<td>빅뱅 후 4-5억 년</td>
-				<td>우주 내 냉각된 가스로 첫 번째 별과 은하가 형성됩니다.</td>
-			</tr>
-			<tr>
-				<td>은하수 형성</td>
-				<td>120-130억 년 전</td>
-				<td>우주 내 가스와 먼지에서 은하수가 형성되기 시작합니다.</td>
-			</tr>
-			<tr>
-				<td>태양계 형성</td>
-				<td>46억 년 전</td>
-				<td>가스와 먼지의 구름으로부터 태양계가 형성됩니다.</td>
-			</tr>
-			<tr>
-				<td>지구 생명체 발달</td>
-				<td>35억 년 전</td>
-				<td>지구에서 첫 생명체가 등장합니다. 대부분의 경우 단세포 생물입니다.</td>
-			</tr>
-			<tr>
-				<td>인류 진화</td>
-				<td>30만 년 전</td>
-				<td>현대인인 인간(Homo sapiens)이 아프리카에서 진화합니다.</td>
-			</tr>
-		</tbody>
-	</table>
+  <table>
+    <thead>
+      <tr>
+        <th>Incident</th>
+        <th>Date</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Big Bang</td>
+        <td>13.8 billion years ago</td>
+        <td>The universe begins to expand and cool rapidly.</td>
+      </tr>
+      <tr>
+        <td>Formation of the first stars and galaxies</td>
+        <td>4-500 million years after the Big Bang</td>
+        <td>The first stars and galaxies are formed from the cooled gas in space.</td>
+      </tr>
+      <tr>
+        <td>Milky Way Formation</td>
+        <td>12-13 billion years ago</td>
+        <td>Milky galaxies begin to form from the gas and dust in space.</td>
+      </tr>
+      <tr>
+        <td>Forming the solar system</td>
+        <td>4.6 billion years ago</td>
+        <td>Solar systems form from clouds of gas and dust.</td>
+      </tr>
+      <tr>
+        <td>Development of life on Earth</td>
+        <td>3.5 billion years ago</td>
+        <td>The first life on Earth appears. Most of them are single-celled organisms.</td>
+      </tr>
+      <tr>
+        <td>Human evolution</td>
+        <td>300,000 years ago</td>
+        <td>Modern humans (Homo sapiens) evolve in Africa.</td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 </html>
